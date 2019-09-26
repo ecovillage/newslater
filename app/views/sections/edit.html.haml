@@ -1,0 +1,5 @@
+%h1 Editing Section
+= render 'form', section: @section
+= link_to 'Show', [@section.newsletter, @section]
+|
+= link_to 'Back', newsletter_sections_path(@section.newsletter)

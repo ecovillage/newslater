@@ -1,0 +1,5 @@
+= @newsletter.name
+= @newsletter.header
+= @newsletter.sections.order(order: :asc).each do |section|
+  = section.heading
+  = section.content

@@ -1,0 +1,16 @@
+%p#notice= notice
+%p
+  %strong Heading:
+  = @section.heading
+
+  = @section.content
+
+- if @section.image.attached?
+  -#= image_tag @section.image.variant(combine_options: {resize: '400x200^', extent: '400x200', gravity: 'center'})
+  = image_tag @section.image.variant(resize_to_fill: [600, 200])
+  -#, crop: :center))
+
+= @section.content
+= link_to 'Edit', edit_newsletter_section_path(@section)
+|
+= link_to 'Back', newsletter_path(@section.newsletter)

@@ -1,0 +1,20 @@
+%p#notice= notice
+%p
+  %strong Name:
+  = @newsletter.name
+%p
+  %strong Header:
+  = @newsletter.header
+
+%div
+  %ul
+    - @newsletter.sections.order(order: :asc).each do |section|
+      %li= link_to section.heading, [@newsletter, section]
+
+= link_to 'Edit', edit_newsletter_path(@newsletter)
+|
+= link_to 'Add section', new_newsletter_section_path(@newsletter)
+|
+= link_to 'Back', newsletters_path
+|
+= link_to 'Preview', newsletter_preview_path(newsletter_id: @newsletter)

@@ -1,0 +1,22 @@
+= form_with(model: section, url: [section.newsletter, section], local: true) do |form|
+  - if section.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(section.errors.count, "error")
+        prohibited this section from being saved:
+      %ul
+        - section.errors.full_messages.each do |message|
+          %li= message
+  .field
+    = form.label :heading
+    = form.text_field :heading
+  .field
+    = form.label :content
+    = form.text_area :content
+  .field
+    = form.label :image
+    = form.file_field :image
+    - if section.image.attached?
+      = image_tag section.image
+  .actions
+    = form.submit

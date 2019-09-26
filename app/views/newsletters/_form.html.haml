@@ -1,0 +1,23 @@
+= form_with(model: newsletter, local: true) do |form|
+  - if newsletter.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(newsletter.errors.count, "error")
+        prohibited this newsletter from being saved:
+      %ul
+        - newsletter.errors.full_messages.each do |message|
+          %li= message
+  .field
+    = form.label :name
+    = form.text_field :name
+  .field
+    = form.label :header
+    = form.text_field :header
+
+  %div
+    %ul
+      - newsletter.sections.order(order: :asc).each do |section|
+        %li= section.heading
+
+  .actions
+    = form.submit
