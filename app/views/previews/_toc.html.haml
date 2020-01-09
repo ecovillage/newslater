@@ -1,0 +1,18 @@
+%table.toc.card.border-box{:height => "0", :width => "100%", :id => "toc"}
+  %tbody.border-box
+    %tr.border-box
+      %td.card-cell.border-box{:align => "center", :bgcolor => "#ffffff", :width => "100%"}
+        %table.table100.border-box.c1357{:height => "0", :width => "100%"}
+          %tbody.border-box
+            %tr.border-box
+              %td.card-content.border-box{:valign => "top"}
+                %h1.card-title.border-box(style="text-align: center;")
+                  Inhalt
+                  %br.border-box{"data-highlightable" => "1"}/
+                %p.card-text.border-box{:style => "font-family: Arial, Helvetica, sans-serif; text-align: left;"}
+                  %ul
+                    - @newsletter.sections.order(position: :asc).each do |section|
+                      %li
+                        %a(style="font-family: Arial, Helvetica, sans-serif; text-align: left;" href="#section_#{section.id}")
+                          = section.heading
+  
