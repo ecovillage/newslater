@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_25_203128) do
+ActiveRecord::Schema.define(version: 2019_10_01_065655) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -46,7 +46,8 @@ ActiveRecord::Schema.define(version: 2019_09_25_203128) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "newsletter_id", null: false
-    t.decimal "order"
+    t.decimal "position"
+    t.string "kind", default: "full"
     t.index ["newsletter_id"], name: "index_sections_on_newsletter_id"
   end
 
