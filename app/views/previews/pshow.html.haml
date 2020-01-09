@@ -32,8 +32,10 @@
                           %b.border-box
                             = @newsletter.header
                           %br.border-box/
-                = render "toc"
-                - @newsletter.sections.order(position: :asc).each do |section|
+                -#= render "toc"
+                - @newsletter.sections.order(position: :asc).each_with_index do |section, idx|
+                  - if idx == 1
+                    = render "toc"
                   - if section.short?
                     = render partial: 'short_section', locals: {section: section}
                   - else
