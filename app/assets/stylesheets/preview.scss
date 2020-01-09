@@ -1,0 +1,289 @@
+body.newsletter {
+  table {
+    .header-part1 {
+      border: 2px;
+    }
+  }
+
+  table.container {
+    border: 2px;
+  }
+}
+
+.pad5 {
+  padding-top:    5px;
+  padding-right:  5px;
+  padding-bottom: 5px;
+  padding-left:   5px;
+}
+
+.pad0 {
+  padding-top:    0px;
+  padding-right:  0px;
+  padding-bottom: 0px;
+  padding-left:   0px;
+}
+
+.img-logo {
+  color: black;
+  width: 200px;
+}
+
+.newsleadder-heading {
+  font-size: 20px;
+  font-weight: 300;
+  font-family: Arial, Helvetica, sans-serif;
+  padding-top:    10px;
+  padding-right:  10px;
+  padding-bottom:  0px;
+  padding-left:   10px;
+  color: rgb(68, 68, 68);
+}
+
+.border-radius3 {
+  border-top-left-radius:     3px;
+  border-top-right-radius:    3px;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius:  3px;
+}
+
+table.container {
+  border: 2px;
+  //border-style: solid;
+  //color: red;
+  box-sizing: border-box;
+  min-height: 150px;
+  @extend .pad5;
+  margin-top:    auto;
+  margin-right:  auto;
+  margin-bottom: auto;
+  margin-left:   auto;
+  height: 0px;
+  width: 620px;
+  -premailer-width: 620px;
+  max-width: 620px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container-cell {
+  vertical-align: top;
+  font-size: medium;
+  padding-bottom: 50px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.main-body {
+  @extend .pad5;
+  min-height: 150px;
+  width:  100%;
+  height: 100%;
+  background-color: rgb(234, 236, 237);
+}
+
+.row {
+  vertical-align: top;
+}
+
+.main-body-cell {
+  font-family: Tahoma, Geneva, sans-serif;
+}
+
+.border-box {
+  box-sizing: border-box;
+}
+
+.main-content-table {
+  margin-top:     0px;
+  margin-right:  auto;
+  margin-bottom: 10px;
+  margin-left:    0px;
+  @extend .pad5;
+  width: 100%;
+  min-height: 30px;
+  background-color: rgb(255, 255, 255);
+  border-top-width:    0px;
+  border-right-width:  0px;
+  border-bottom-width: 0px;
+  border-left-width:   0px;
+  border-top-style:    solid;
+  border-right-style:  solid;
+  border-bottom-style: solid;
+  border-left-style:   solid;
+  border-top-color:    rgb(255, 255, 255);
+  border-right-color:  rgb(255, 255, 255);
+  border-bottom-color: rgb(255, 255, 255);
+  border-left-color:   rgb(255, 255, 255);
+  border-image-source: initial;
+  border-image-slice:  initial;
+  border-image-width:  initial;
+  border-image-outset: initial;
+  border-image-repeat: initial;
+}
+
+.card-title {
+  font-size: 25px;
+  font-weight: 300;
+  color: rgb(68, 68, 68);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.card-content {
+  font-size: 13px;
+  line-height: 20px;
+  color: rgb(40, 42, 43);
+  //color: rgb(111, 119, 125);
+  padding-top:   10px;
+  padding-right: 20px;
+  padding-bottom: 0px;
+  padding-left:  20px;
+  vertical-align: top;
+}
+
+.card-cell {
+  background-color: rgb(255, 255, 255);
+  overflow-x: hidden;
+  overflow-y: hidden;
+  text-align: center;
+  width: 100%;
+  @extend .pad0;
+  @extend .border-radius3;
+}
+
+.card {
+  //@extend .pad5;
+  min-height: 150px;
+  margin-bottom: 20px;
+  height: 0px;
+  width: 100%;
+}
+
+.table_vib {
+  @extend .pad5;
+  width: 100%;
+  height: 0px;
+  min-height: 30px;
+  border-collapse: separate;
+  margin-top:     0px;
+  margin-right:   0px;
+  margin-bottom: 10px;
+  margin-left:    0px;
+}
+
+.top-cell {
+  text-align: right;
+  color: rgb(152, 156, 165);
+}
+
+.table100 {
+  width: 100%;
+  min-height: 150px;
+  @extend .pad5;
+  height: 0px;
+  margin-top:    0px;
+  margin-right:  0px;
+  margin-bottom: 0px;
+  margin-left:   0px;
+  border-collapse: collapse;
+}
+
+.grid-item-card-cell {
+  background-color: rgb(255, 255, 255);
+  overflow-x: hidden;
+  overflow-y: hidden;
+  text-align: center;
+  @extend .pad0;
+  @extend .border-radius3;
+}
+
+.grid-item-image {
+  line-height: 150px;
+  font-size: 50px;
+  color: rgb(120, 197, 214);
+  margin-bottom: 15px;
+  -premailer-width: 300px;
+  width: 300px;
+}
+
+.grid-item-card-content {
+  font-size: 13px;
+  color: rgb(40, 42, 43);
+  //color: rgb(111, 119, 125);
+  padding-top:     0px;
+  padding-right:  10px; 
+  padding-bottom: 20px;
+  padding-left:   10px;
+  width: 100%;
+  line-height: 20px;
+}
+
+.image-full {
+  width: 100%;//600px;
+  margin-top:     0px;
+  margin-right:   0px;
+  margin-bottom: 15px;
+  margin-left:    0px;
+  font-size: 50px;
+  color: rgb(120, 197, 214);
+  line-height: 250px;
+  text-align: center;
+}
+
+.grid-item-row {
+  margin-top:     0px;
+  margin-right:  auto;
+  margin-bottom: 10px;
+  margin-left:   auto;
+  padding-top:    5px;
+  padding-right:  0px;
+  padding-bottom: 5px;
+  padding-left:   0px;
+  width: 100%;
+}
+
+.grid-item-cell2-l {
+  width: 100%;
+  padding-top:    5px;
+  padding-right:  0px;
+  padding-bottom: 5px;
+  padding-left:   0px;
+  margin-bottom: 10px;
+}
+
+.grid-item-cell2-r {
+  vertical-align: top;
+  padding-left: 10px;
+  width: 50%;
+}
+
+.list-item {
+  height: auto;
+  width: 100%;
+  margin-top:     0px;
+  margin-right:  auto;
+  margin-bottom: 10px;
+  margin-left:   auto;
+  @extend .pad5;
+}
+
+.list-item-cell {
+  background-color: rgb(255, 255, 255);
+  overflow-x: hidden;
+  overflow-y: hidden;
+  @extend .border-radius3;
+  @extend .pad5;
+}
+
+.list-item-content {
+  border-collapse: collapse;
+  margin-top:    0px;
+  margin-right: auto;
+  margin-bottom: 0px;
+  margin-left:  auto;
+  height: 150px;
+  width: 100%;
+  @extend .pad5;
+}
+
+//.box-sizing: border-box; width: 100%; min-height: 150px; padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px; height: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-collapse: collapse;
+
