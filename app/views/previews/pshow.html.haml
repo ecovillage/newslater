@@ -1,0 +1,148 @@
+-#= @newsletter.name
+-#= @newsletter.header
+-#- @newsletter.sections.order(order: :asc).each do |section|
+-#  = section.heading
+-#  - markdown = ''#Redcarpet::Markdown.new(Redcarpet::Render::HTML)
+-#  - markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, no_links: true, hard_wrap: true)
+-#  != markdown.render(section.content)
+!!!
+
+%table.main-body.border-box{:bgcolor => "#eaeced", :height => "100%", :width => "100%"}
+  %tbody.border-box
+    %tr.row.border-box{:valign => "top"}
+      %td.main-body-cell.border-box
+        %table.container{:height => "0", :width => "620"}
+          %tbody.border-box
+            %tr.border-box
+              %td.container-cell.border-box{:valign => "top"}
+                %table.table100.border-box.table_vib{:height => "0", :width => "100%"}
+                  %tbody.border-box
+                    %tr.border-box
+                      %td.top-cell.border-box{:align => "right"}
+                        %u.browser-link.border-box{:style => "font-size: 12px;"}
+                          View in browser
+                %table.main-content-table.border-box{:bgcolor => "#ffffff", :width => "100%"}
+                  %tbody.border-box
+                    %tr.border-box
+                      %td.cell.box-sizing{:style => "width: 11%;", :width => "11%"}
+                        %img.img-logo.border-box{:src => "http://192.168.120.123:3000/grapejs/uploads/static/075afb2e5b18a2cfeeae3ccb4f1d3086.gif", :width => "200"}/
+                      %td.cell.border-box.c1776{:style => "width: 70%; padding-top: 1px; padding-right: 1px; padding-bottom: 0px; padding-left: 1px; vertical-align: bottom;", :valign => "bottom", :width => "70%"}
+                        %br{"data-highlightable" => "1"}/
+                        .newsletter-heading.border-box
+                          %b.border-box
+                            Newsletter Juli 2019
+                          %br.border-box/
+                %table.toc.card.border-box{:height => "0", :width => "100%", :id => "toc"}
+                  %tbody.border-box
+                    %tr.border-box
+                      %td.card-cell.border-box{:align => "center", :bgcolor => "#ffffff", :width => "100%"}
+                        %table.table100.border-box.c1357{:height => "0", :width => "100%"}
+                          %tbody.border-box
+                            %tr.border-box
+                              %td.card-content.border-box{:valign => "top"}
+                                %h1.card-title.border-box(style="text-align: center;")
+                                  Inhalt
+                                  %br.border-box{"data-highlightable" => "1"}/
+                                %p.card-text.border-box{:style => "font-family: Arial, Helvetica, sans-serif; text-align: left;"}
+                                  %ul
+                                    - @newsletter.sections.order(position: :asc).each do |section|
+                                      %li
+                                        %a(style="font-family: Arial, Helvetica, sans-serif; text-align: left;" href="#section_#{section.id}")
+                                          = section.heading
+
+                - @newsletter.sections.order(position: :asc).each do |section|
+                  - if section.short?
+                    = render partial: 'short_section', locals: {section: section}
+                  - else
+                    = render partial: 'full_section', locals: {section: section}
+                  -#%table.card.border-box{:height => "0", :width => "100%", :id => "section_#{section.id}"}
+                  -#  %tbody.border-box
+                  -#    %tr.border-box
+                  -#      %td.card-cell.border-box{:align => "center", :bgcolor => "#ffffff", :width => "100%"}
+                  -#        %img.image-full.border-box{:alt => "Big image here", :src => "#{url_for section.image.variant(resize_to_fill: [300,150]) if section.image.attached?}", :width => "600"}/
+                  -#        %table.table100.border-box.c1357{:height => "0", :width => "100%"}
+                  -#          %tbody.border-box
+                  -#            %tr.border-box
+                  -#              %td.card-content.border-box{:valign => "top"}
+                  -#                %h1.card-title.border-box
+                  -#                  = section.heading
+                  -#                  %br.border-box{"data-highlightable" => "1"}/
+                  -#                %p.card-text.border-box{:style => "font-family: Arial, Helvetica, sans-serif; text-align: left;"}
+                  -#                  - markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, no_links: true, hard_wrap: true)
+                  -#                  != markdown.render(section.content)
+
+                -#%table.grid-item-row{:style => "box-sizing: border-box; margin-top: 0px; margin-right: auto; margin-bottom: 10px; margin-left: auto; padding-top: 5px; padding-right: 0px; padding-bottom: 5px; padding-left: 0px; width: 100%;", :width => "100%"}
+                -#  %tbody.border-box
+                -#    %tr.border-box
+                -#      %td.grid-item-cell2-l{:style => "box-sizing: border-box; vertical-align: top; padding-right: 10px; width: 50%;", :valign => "top", :width => "50%"}
+                -#        %table.grid-item-card{:style => "box-sizing: border-box; width: 100%; padding-top: 5px; padding-right: 0px; padding-bottom: 5px; padding-left: 0px; margin-bottom: 10px;", :width => "100%"}
+                -#          %tbody.border-box
+                -#            %tr.border-box
+                -#              %td.grid-item-card-cell.border-box{:align => "center", :bgcolor => "#ffffff"}
+                -#                %img.grid-item-image.border-box{:alt => "Image", :src => "http://192.168.120.123:3000/grapejs/uploads/static/d6a0dd10502b5d48e99114b64cf63486.jpeg", :width => "300"}/
+                -#                %table.grid-item-card-body.border-box
+                -#                  %tbody.border-box
+                -#                    %tr.border-box
+                -#                      %td.grid-item-card-content.border-box{:width => "100%"}
+                -#                        %h1.card-title.border-box
+                -#                          offensichtlich
+                -#                        %p.card-text.border-box{:style => "font-family: Arial, Helvetica, sans-serif;"} muss man auch hier die Bilder vorher richtig beschneiden... sonst gibt es wieder unterschiedliche größen...
+                -#      %td.grid-item-cell2-r{:style => "box-sizing: border-box; vertical-align: top; padding-left: 10px; width: 50%;", :valign => "top", :width => "50%"}
+                -#        %table.grid-item-card.border-box{:style => "width: 100%; padding-top: 5px; padding-right: 0px; padding-bottom: 5px; padding-left: 0px; margin-bottom: 10px;", :width => "100%"}
+                -#          %tbody.border-box
+                -#            %tr.border-box
+                -#              %td.grid-item-card-cell.border-box{:align => "center", :bgcolor => "#ffffff"}
+                -#                %img.grid-item-image{:alt => "Image", :src => "http://192.168.120.123:3000/grapejs/uploads/static/08601b1898b1b8d6b4bf056cd0055d63.jpeg", :width => "300"}/
+                -#                %table.grid-item-card-body{:style => "box-sizing: border-box;"}
+                -#                  %tbody.border-box
+                -#                    %tr.border-box
+                -#                      %td.grid-item-card-content.border-box{:width => "100%"}
+                -#                        %h1.card-title
+                -#                          Title here
+                -#                        %p.card-text.border-box{:style => "font-family: Arial, Helvetica, sans-serif;"} Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                -#%table.grid-item-row.border-box{:width => "100%"}
+                -#  %tbody.border-box
+                -#    %tr.border-box
+                -#      %td.grid-item-cell2-l.border-box{:style => "vertical-align: top; padding-right: 10px; width: 50%;", :valign => "top", :width => "50%"}
+                -#        %table.grid-item-card.border-box{:width => "100%"}
+                -#          %tbody.border-box
+                -#            %tr.border-box
+                -#              %td.grid-item-card-cell.border-box{:align => "center", :bgcolor => "#ffffff"}
+                -#                %img.grid-item-image.border-box{:alt => "Image1", :src => "http://192.168.120.123:3000/grapejs/uploads/static/08601b1898b1b8d6b4bf056cd0055d63.jpeg", :width => "300"}/
+                -#                %table.border-box.grid-item-card-body
+                -#                  %tbody.border-box
+                -#                    %tr.border-box
+                -#                      %td.grid-item-card-content.border-box{:width => "100%"}
+                -#                        %h1.border-box.card-title
+                -#                          Test it
+                -#                        %p.card-text.border-box{:style => "font-family: Arial, Helvetica, sans-serif;"}
+                -#                          You can send email tests directly from the editor and check how are looking on your email clients
+                -#      %td.border-box.grid-item-cell2-r{:valign => "top", :width => "50%"}
+                -#        %table.grid-item-card{:style => "box-sizing: border-box; width: 100%; padding-top: 5px; padding-right: 0px; padding-bottom: 5px; padding-left: 0px; margin-bottom: 10px;", :width => "100%"}
+                -#          %tbody.border-box
+                -#            %tr.border-box
+                -#              %td.grid-item-card-cell.border-box{:align => "center", :bgcolor => "#ffffff"}
+                -#                %img.border-box.grid-item-image{:alt => "Image2", :src => "http://192.168.120.123:3000/grapejs/uploads/static/695914c8973a585f9220882d910f4d64.jpeg", :width => "300"}/
+                -#                %table.grid-item-card-body{:style => "box-sizing: border-box;"}
+                -#                  %tbody.border-box
+                -#                    %tr.border-box
+                -#                      %td.grid-item-card-content.border-box{:style => "font-size: 13px; color: rgb(111, 119, 125); padding-top: 0px; padding-right: 10px; padding-bottom: 20px; padding-left: 10px; width: 100%; line-height: 20px;", :width => "100%"}
+                -#                        %h1.card-title{:style => "box-sizing: border-box; font-size: 25px; font-weight: 300; color: rgb(68, 68, 68); font-family: Arial, Helvetica, sans-serif;"}
+                -#                          Responsive
+                -#                        %p.card-text{:style => "box-sizing: border-box; font-family: Arial, Helvetica, sans-serif;"}
+                -#                          Using the device manager you'll always send a fully responsive contents
+                %table.footer{:align => "center", :style => "box-sizing: border-box; margin-top: 50px; color: rgb(152, 156, 165); text-align: center; font-size: 11px; padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px;"}
+                  %tbody.border-box
+                    %tr.border-box
+                      %td.footer-cell{:style => "box-sizing: border-box;"}
+                        .c2577{:style => "box-sizing: border-box; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; padding-left: 10px;"}
+                          %p.footer-info{:style => "box-sizing: border-box;"}
+                            GrapesJS Newsletter Builder is a free and open source preset (plugin) used on top of the GrapesJS core library.
+                            For more information about and how to integrate it inside your applications check
+                          %p{:style => "box-sizing: border-box;"}
+                            %a.link{:href => "https://github.com/artf/grapesjs-preset-newsletter", :style => "box-sizing: border-box; color: rgb(217, 131, 166);"} GrapesJS Newsletter Preset
+                            %br{:style => "box-sizing: border-box;"}/
+                        .c2421{:style => "box-sizing: border-box; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; padding-left: 10px;"}
+                          MADE BY
+                          %a.link{:href => "https://github.com/artf", :style => "box-sizing: border-box; color: rgb(217, 131, 166);"} ARTUR ARSENIEV
+                          %p{:style => "box-sizing: border-box;"}
